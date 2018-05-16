@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>kira's Haircut</title>
+</head>
+<body>
+    <h1>kira's Haircut</h1>
+    <p>Your convenience is our duty</p>
+
+    <!-- Item 1 -->
+    <p>jim: 200 RMB</p>
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527077650&di=18abd8d9af40ae073c7c77e191f9f3e8&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F622762d0f703918f27bf94f75a3d269759eec4a5.jpg">
+
+    <!-- Item 2 -->
+    <p>Jason: 300 RMB</p>
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527077674&di=a97e8d07c28e86a1534b623bb412230e&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F267f9e2f0708283854af2a2fb399a9014c08f16f.jpg">
+
+    <!-- Item 3 --> 
+    <p>Max: 400 RMB</p>
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527077712&di=cf511824022d532228825db3b7b3c1e8&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F6a63f6246b600c33fc7b28e1114c510fd9f9a19d.jpg">
+
+    <!-- User Form -->
+    <h1>Place Your Order</h1>
+    <form action="{% url 'haircut:home_page' %} " method="POST">
+        {% csrf_token %}
+        <input type="text" name="time" placeholder="Type Your Item"><br>
+        <textarea placeholder="Text your Address" name="customer_name"></textarea><br>
+        <input type="submit" value="Buy Now!">
+    </form>
+    <h1>Your Order</h1>
+    <p>Time: {{time}}</p>
+    <p>Customer_name: {{customer_name}}</p>
+
+</body>
+</html>
